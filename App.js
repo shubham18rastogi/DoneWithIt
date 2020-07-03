@@ -1,30 +1,31 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  Image,
-  TouchableWithoutFeedback,
-  SafeAreaView,
-} from "react-native";
+import { StyleSheet, SafeAreaView, Button, Alert } from "react-native";
 
 export default function App() {
   console.log("App Executed");
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableWithoutFeedback onPress={() => console.log("Image Clicked!!")}>
-        <Image
-          fadeDuration={1000}
-          source={{
-            uri: "https://picsum.photos/seed/picsum/200/300",
-            width: 300,
-            height: 200,
-          }}
-        />
-      </TouchableWithoutFeedback>
-      <Text numberOfLines={1} onPress={() => console.log("Text clicked!!")}>
-        Hello World !!!
-      </Text>
-      <Image source={require("./assets/icon.png")} />
+      <Button
+        color="black"
+        title="Click Me!!"
+        onPress={() => console.log("Button Clicked!!")}
+      />
+      <Button title="Alert..." onPress={() => alert("Button Clicked!!")} />
+      <Button
+        title="Custom Alert"
+        onPress={() =>
+          Alert.alert("Title", "Message", [
+            { text: "Yes", onPress: () => console.log("Yes") },
+            { text: "No", onPress: () => console.log("No") },
+          ])
+        }
+      />
+      <Button
+        title="Prompt"
+        onPress={
+          () => Alert.prompt("Title", "Message", (text) => console.log(text)) //only works on ios
+        }
+      />
     </SafeAreaView>
   );
 }
