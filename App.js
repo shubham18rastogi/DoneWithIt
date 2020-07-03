@@ -1,13 +1,31 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  Image,
+  TouchableWithoutFeedback,
+  SafeAreaView,
+} from "react-native";
 
 export default function App() {
-  let x = 1;
   console.log("App Executed");
   return (
-    <View style={styles.container}>
-      <Text>Hello World</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <TouchableWithoutFeedback onPress={() => console.log("Image Clicked!!")}>
+        <Image
+          fadeDuration={1000}
+          source={{
+            uri: "https://picsum.photos/seed/picsum/200/300",
+            width: 300,
+            height: 200,
+          }}
+        />
+      </TouchableWithoutFeedback>
+      <Text numberOfLines={1} onPress={() => console.log("Text clicked!!")}>
+        Hello World !!!
+      </Text>
+      <Image source={require("./assets/icon.png")} />
+    </SafeAreaView>
   );
 }
 
