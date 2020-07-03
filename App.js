@@ -5,13 +5,22 @@ import {
   Button,
   Platform,
   StatusBar,
+  View,
 } from "react-native";
+import { useDeviceOrientation } from "@react-native-community/hooks";
 
 export default function App() {
   console.log("App Executed");
+  const { landscape } = useDeviceOrientation();
   return (
     <SafeAreaView style={styles.container}>
-      <Button title="Alert..." onPress={() => alert("Button Clicked!!")} />
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          width: "100%",
+          height: landscape ? "100%" : "30%",
+        }}
+      ></View>
     </SafeAreaView>
   );
 }
