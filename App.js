@@ -7,8 +7,9 @@ import Card from "./app/components/Card";
 import AppText from "./app/components/AppText";
 import AppButton from "./app/components/AppButton";
 import ListingDetailScreen from "./app/screens/ListingDetailScreen";
+import MessagesScreen from "./app/screens/MessagesScreen";
 
 export default function App() {
   console.log("App Executed");
-  return <ViewImageScreen />;
+  return <MessagesScreen />;
 }
