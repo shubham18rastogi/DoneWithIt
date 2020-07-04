@@ -10,5 +10,5 @@ import ListingDetailScreen from "./app/screens/ListingDetailScreen";
 
 export default function App() {
   console.log("App Executed");
-  return <ListingDetailScreen />;
+  return <ViewImageScreen />;
 }
