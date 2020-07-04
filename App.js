@@ -8,9 +8,5 @@ import AppButton from "./app/components/AppButton";
 
 export default function App() {
   console.log("App Executed");
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <AppButton title="Login" onPress={() => console.log("Clicked")} />
-    </View>
-  );
+  return <WelcomeScreen />;
 }
