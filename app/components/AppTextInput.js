@@ -32,19 +32,6 @@ const styles = StyleSheet.create({
   icon: {
     marginRight: 10,
   },
-  textInput: {
-    color: defaultStyles.colors.dark,
-    ...Platform.select({
-      ios: {
-        fontSize: 20,
-        fontFamily: "Avenir",
-      },
-      android: {
-        fontSize: 18,
-        fontFamily: "Roboto",
-      },
-    }),
-  },
 });
 
 export default AppTextInput;
