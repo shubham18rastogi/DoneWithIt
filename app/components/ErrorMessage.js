@@ -2,8 +2,10 @@ import React from "react";
 import AppText from "./AppText";
 import { StyleSheet } from "react-native";
 
-function ErrorMessage({ error }) {
-  return error ? <AppText style={styles.error}>{error}</AppText> : null;
+function ErrorMessage({ error, visible }) {
+  return !error || !visible ? null : (
+    <AppText style={styles.error}>{error}</AppText>
+  );
 }
 
 const styles = StyleSheet.create({
