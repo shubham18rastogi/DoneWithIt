@@ -5,6 +5,7 @@ import AccountScreen from "./../screens/AccountScreen";
 import ListingEditScreen from "../screens/ListingEditScreen";
 import ListingsScreen from "../screens/ListingsScreen";
 import FeedNavigator from "./FeedNavigator";
+import AccountNavigator from "./AccountNavigator";
 
 const Tab = createBottomTabNavigator();
 export default AppNavigator = () => (
@@ -17,6 +18,6 @@ export default AppNavigator = () => (
   >
     <Tab.Screen name="Feed" component={FeedNavigator} />
     <Tab.Screen name="Listing Edit" component={ListingEditScreen} />
-    <Tab.Screen name="Account" component={AccountScreen} />
+    <Tab.Screen name="Account" component={AccountNavigator} />
   </Tab.Navigator>
 );
