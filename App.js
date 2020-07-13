@@ -6,6 +6,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { Text, Button } from "react-native";
 import Screen from "./app/components/Screen";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import AuthNavigator from "./app/navigation/AuthNavigator";
+import navigationTheme from "./app/navigation/navigationTheme";
 
 const Tweets = ({ navigation }) => (
   <Screen>
@@ -73,8 +75,8 @@ const TabNavigator = () => (
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <TabNavigator />
+    <NavigationContainer theme={navigationTheme}>
+      <AuthNavigator />
     </NavigationContainer>
   );
 }
