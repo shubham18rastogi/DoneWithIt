@@ -9,22 +9,12 @@ import routes from "../navigation/routes";
 import AppText from "../components/Text";
 import AppButton from "../components/Button";
 import ActivityIndicator from "./../components/ActivityIndicator";
+import useApi from "./../hooks/useApi";
 
 function ListingsScreen({ navigation }) {
-  const [listings, setListings] = useState([]);
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const loadListings = async () => {
-    setLoading(true);
-    const { data, ok } = await listingsApi.getListings();
-    setLoading(false);
-
-    if (!ok) return setError(true);
-
-    setError(false);
-    setListings(data);
-  };
+  const { data: listings, error, loading, request: loadListings } = useApi(
+    listingsApi.getListings
+  );
 
   useEffect(() => {
     loadListings();
