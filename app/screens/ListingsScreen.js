@@ -6,12 +6,18 @@ import colors from "../config/colors";
 import listingsApi from "../api/listings";
 import Screen from "../components/Screen";
 import routes from "../navigation/routes";
+import AppText from "../components/Text";
+import AppButton from "../components/Button";
 
 function ListingsScreen({ navigation }) {
   const [listings, setListings] = useState([]);
+  const [error, setError] = useState(false);
 
   const loadListings = async () => {
-    const { data } = await listingsApi.getListings();
+    const { data, ok } = await listingsApi.getListings();
+    if (!ok) return setError(true);
+
+    setError(false);
     setListings(data);
   };
 
@@ -21,6 +27,12 @@ function ListingsScreen({ navigation }) {
 
   return (
     <Screen style={styles.screen}>
+      {error && (
+        <>
+          <AppText>Couldn't retrive listings</AppText>
+          <AppButton title="Retry" onPress={loadListings} />
+        </>
+      )}
       <FlatList
         data={listings}
         keyExtractor={(listing) => listing.id.toString()}
