@@ -5,7 +5,7 @@ const apiClient = create({
   baseURL: "http://192.168.0.109:9000/api",
 });
 
-const get = apiClient.get();
+const get = apiClient.get;
 apiClient.get = async (url, params, axiosConfig) => {
   const response = await get(url, params, axiosConfig);
 
