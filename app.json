@@ -2,11 +2,7 @@
   "expo": {
     "name": "DoneWithIt",
     "slug": "DoneWithIt",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
@@ -18,14 +14,21 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.shubham.donewithit",
+      "buildNumber": "1.0.0"
     },
-    "description": "A marketplace for selling the stuff you don't need anymore",
+    "android": {
+      "package": "com.shubham.donewithit",
+      "versionCode": 1
+    },
+    "description": "A marketplace for selling the stuff you don't need anymore.",
     "githubUrl": "https://github.com/shubham18rastogi/DoneWithIt.git",
+    "notification": {
+      "iosDisplayInForeground": true
+    },
     "extra": {
       "bugsnag": {
         "apiKey": "30568d7d4296bddd6f69d7f68834770b"
