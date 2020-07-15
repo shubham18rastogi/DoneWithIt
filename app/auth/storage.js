@@ -20,7 +20,7 @@ const getToken = async () => {
 
 const getUser = async () => {
   const token = await getToken();
-  retunr(!token) ? null : jwtDecode(token);
+  return !token ? null : jwtDecode(token);
 };
 
 const removeToken = async () => {
@@ -33,6 +33,7 @@ const removeToken = async () => {
 
 export default {
   getUser,
+  getToken,
   removeToken,
   storeToken,
 };

@@ -14,7 +14,7 @@ export default function App() {
   const [isReady, setIsReady] = useState(false);
 
   const restoreUser = async () => {
-    const user = await authStorage.getToken();
+    const user = await authStorage.getUser();
     if (user) setUser(user);
   };
 
